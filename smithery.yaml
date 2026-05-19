@@ -1,0 +1,42 @@
+# Smithery.ai Deployment Manifest for deepsearch-mcp
+name: deepsearch-mcp
+version: 1.0.0
+description: Multi-engine web search (Brave, Google, Bing) with page fetching, structured
+  extraction, news, images, and advanced filters u2014 directly from your AI agent.
+gateway: https://deepsearch.zhc-mcp.org
+runtime:
+  language: python
+  entrypoint: src/server.py
+  transport: stdio
+vendor: Zero Human Company
+tags:
+- mcp
+- mcp-server
+- ai-agent
+- zero-human-company
+pricing:
+  type: prepaid
+  trial: 50 free calls
+  packages:
+  - name: 500 Credits
+    price: 5.0
+    currency: EUR
+    credits: 500
+  - name: 5.000 Credits
+    price: 9.0
+    currency: EUR
+    credits: 5000
+  - name: 25.000 Credits
+    price: 19.0
+    currency: EUR
+    credits: 25000
+privacy: No data stored on servers. All inputs processed in-memory. See PRIVACY.md.
+tools:
+- name: web_search
+  description: Search query
+- name: search_images
+  description: Image search query
+- name: search_news
+  description: News search query
+- name: fetch_page_content
+  description: Fetch and extract the main text content from a URL
